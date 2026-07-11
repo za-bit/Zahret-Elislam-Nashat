@@ -1,6 +1,17 @@
 <div class="custom-hero-banner-section">
-  <div class="banner-announcement-bar">
-    <p>{{ section.settings.announcement_text }}</p>
+  <div class="custom-top-header-bar">
+    <div class="header-bar-left">
+      <span>{{ section.settings.header_brand_text }}</span>
+    </div>
+    <div class="header-bar-center">
+      <p>{{ section.settings.header_middle_text }}</p>
+    </div>
+    <div class="header-bar-right">
+      <a href="{{ section.settings.header_btn_url }}" class="header-yellow-btn">
+        {{ section.settings.header_btn_text }}
+        <span class="header-btn-arrow">→</span>
+      </a>
+    </div>
   </div>
 
   <div class="banner-top-line-container">
@@ -30,21 +41,57 @@
 <style>
   .custom-hero-banner-section {
     width: 100%;
-    font-family: sans-serif;
+    font-family: 'Jost', sans-serif;
     box-sizing: border-box;
     background-color: #ffffff;
     position: relative;
     overflow: hidden;
   }
-  .banner-announcement-bar {
+  .custom-top-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #ffffff;
-    text-align: center;
-    padding: 12px 10px;
-    font-size: 11px;
+    padding: 10px 40px;
+    border-bottom: 1px solid #000000;
+  }
+  .header-bar-left {
+    font-size: 16px;
+    font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
+  }
+  .header-bar-center {
+    font-size: 14px;
     color: #000000;
-    border-bottom: 1px solid #000000;
+    text-align: center;
+  }
+  .header-bar-center p {
+    margin: 0;
+  }
+  .header-bar-right {
+    display: flex;
+    align-items: center;
+  }
+  .header-yellow-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #ffe600;
+    color: #000000;
+    padding: 8px 20px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid #000000;
+    transition: background-color 0.3s ease;
+  }
+  .header-yellow-btn:hover {
+    background-color: #e6ce00;
+  }
+  .header-btn-arrow {
+    margin-left: 8px;
   }
   .banner-top-line-container {
     width: 100%;
@@ -65,7 +112,7 @@
     display: flex;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 40px 80px;
+    padding: 20px 80px 40px 80px;
     align-items: center;
     justify-content: space-between;
   }
@@ -74,13 +121,15 @@
     max-width: 500px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     z-index: 2;
+    padding-top: 10px;
   }
   .banner-logo-title {
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 40px;
+    margin-top: 0;
+    margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
   }
@@ -116,7 +165,7 @@
 
   }
   .btn-arrow {
-
+    
     transition: transform 0.3s ease;
   }
   .banner-action-btn:hover .btn-arrow {
@@ -146,9 +195,15 @@
   }
 
   @media (max-width: 768px) {
+    .custom-top-header-bar {
+      flex-direction: column;
+      gap: 10px;
+      padding: 15px 20px;
+      text-align: center;
+    }
     .banner-container {
       flex-direction: column-reverse;
-      padding: 40px 20px;
+      padding: 20px 20px;
       text-align: center;
     }
     .banner-content-box {
@@ -173,9 +228,26 @@
   "settings": [
     {
       "type": "text",
-      "id": "announcement_text",
-      "label": "Announcement Text",
-      "default": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
+      "id": "header_brand_text",
+      "label": "Header Brand Text",
+      "default": "TISSO VISON"
+    },
+    {
+      "type": "text",
+      "id": "header_middle_text",
+      "label": "Header Middle Text",
+      "default": "Find the ideal gift for your loved ones."
+    },
+    {
+      "type": "text",
+      "id": "header_btn_text",
+      "label": "Header Button Text",
+      "default": "CHOOSE GIFT"
+    },
+    {
+      "type": "url",
+      "id": "header_btn_url",
+      "label": "Header Button Link"
     },
     {
       "type": "text",
