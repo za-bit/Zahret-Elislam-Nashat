@@ -3,19 +3,26 @@
     <p>{{ section.settings.announcement_text }}</p>
   </div>
 
-  <div class="banner-container">
-    <div class="banner-content-box">
-      <h1 class="banner-logo-title">{{ section.settings.logo_text }}</h1>
-      <h2 class="banner-main-heading">{{ section.settings.main_heading }}</h2>
-      <p class="banner-description">{{ section.settings.description_text }}</p>
-      
-      <a href="{{ section.settings.button_url }}" class="banner-action-btn">
-        {{ section.settings.button_text }}
-        <span class="btn-arrow">→</span>
-      </a>
-    </div>
+  <div class="banner-top-line-container">
+    <img src="{{ 'banner-top-line.svg' | asset_url }}" alt="Line Art Pattern" class="top-line-graphic" width="1440" height="390" loading="lazy">
+  </div>
 
-    <div class="banner-graphic-box">
+  <div class="banner-main-wrapper">
+    <div class="banner-container">
+      <div class="banner-content-box">
+        <h1 class="banner-logo-title">{{ section.settings.logo_text }}</h1>
+        <h2 class="banner-main-heading">{{ section.settings.main_heading }}</h2>
+        <p class="banner-description">{{ section.settings.description_text }}</p>
+        
+        <a href="{{ section.settings.button_url }}" class="banner-action-btn">
+          {{ section.settings.button_text }}
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+
+      <div class="banner-graphic-box">
+        <img src="{{ 'banner-right-graphic.svg' | asset_url }}" alt="Featured Graphic" class="right-inner-graphic" width="890" height="402" loading="lazy">
+      </div>
     </div>
   </div>
 </div>
@@ -26,24 +33,41 @@
     font-family: sans-serif;
     box-sizing: border-box;
     background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
   }
   .banner-announcement-bar {
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     text-align: center;
-    padding: 8px 10px;
+    padding: 12px 10px;
     font-size: 11px;
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #000000;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #000000;
+  }
+  .banner-top-line-container {
+    width: 100%;
+    height: auto;
+    display: block;
+    line-height: 0;
+  }
+  .top-line-graphic {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .banner-main-wrapper {
+    width: 100%;
+    position: relative;
   }
   .banner-container {
     display: flex;
-    min-height: 500px;
-    background-size: cover;
-    background-position: right center;
-    position: relative;
-    padding: 40px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 40px 80px;
+    align-items: center;
+    justify-content: space-between;
   }
   .banner-content-box {
     flex: 1;
@@ -54,23 +78,24 @@
     z-index: 2;
   }
   .banner-logo-title {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
   }
   .banner-main-heading {
-    font-size: 48px;
-    line-height: 1.2;
-    margin-bottom: 15px;
+    font-size: 54px;
+    line-height: 1.1;
+    margin-bottom: 20px;
     font-weight: 500;
+    letter-spacing: -1px;
   }
   .banner-description {
     font-size: 14px;
-    line-height: 1.5;
-    color: #555;
-    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #333333;
+    margin-bottom: 40px;
   }
   .banner-action-btn {
     display: inline-flex;
@@ -78,42 +103,66 @@
     justify-content: space-between;
     background-color: #000000;
     color: #ffffff;
-    padding: 12px 25px;
+    padding: 14px 30px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     text-transform: uppercase;
     font-weight: bold;
-    width: fit-content;
+    width: 200px;
     transition: all 0.3s ease;
   }
   .banner-action-btn:hover {
     background-color: #333333;
-    padding-right: 35px;
+
   }
   .btn-arrow {
-    margin-left: 15px;
+
     transition: transform 0.3s ease;
   }
   .banner-action-btn:hover .btn-arrow {
     transform: translateX(5px);
   }
+  .banner-graphic-box {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 650px;
+  }
+  .right-inner-graphic {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  @media (max-width: 991px) {
+    .banner-container {
+      padding: 40px 40px;
+    }
+    .banner-main-heading {
+      font-size: 42px;
+    }
+  }
 
   @media (max-width: 768px) {
     .banner-container {
-      flex-direction: column;
-      padding: 20px;
+      flex-direction: column-reverse;
+      padding: 40px 20px;
       text-align: center;
     }
     .banner-content-box {
       max-width: 100%;
       align-items: center;
+      margin-top: 30px;
     }
-    .banner-main-heading {
-      font-size: 32px;
+    .banner-graphic-box {
+      max-width: 100%;
+      justify-content: center;
     }
     .banner-action-btn {
       width: 100%;
-      justify-content: center;
+
     }
   }
 </style>
