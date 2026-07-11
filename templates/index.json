@@ -14,7 +14,7 @@
       "name": "Custom Product Grid",
       "settings": {
         "section_title": "TISSO VISON IN THE WILD",
-        "collection_handle": "frontpage",
+        "collection_handle": "products",
         "products_to_show": 20
       }
     }
