@@ -1,0 +1,167 @@
+<div class="custom-hero-banner-section">
+  <div class="banner-announcement-bar">
+    <p>{{ section.settings.announcement_text }}</p>
+  </div>
+
+  <div class="banner-container">
+    <div class="banner-content-box">
+      <h1 class="banner-logo-title">{{ section.settings.logo_text }}</h1>
+      <h2 class="banner-main-heading">{{ section.settings.main_heading }}</h2>
+      <p class="banner-description">{{ section.settings.description_text }}</p>
+      
+      <a href="{{ section.settings.button_url }}" class="banner-action-btn">
+        {{ section.settings.button_text }}
+        <span class="btn-arrow">→</span>
+      </a>
+    </div>
+
+    <div class="banner-graphic-box">
+    </div>
+  </div>
+</div>
+
+<style>
+  .custom-hero-banner-section {
+    width: 100%;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    background-color: #ffffff;
+  }
+  .banner-announcement-bar {
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 8px 10px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #000000;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .banner-container {
+    display: flex;
+    min-height: 500px;
+    background-size: cover;
+    background-position: right center;
+    position: relative;
+    padding: 40px;
+  }
+  .banner-content-box {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+  }
+  .banner-logo-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .banner-main-heading {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+  .banner-description {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  .banner-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: fit-content;
+    transition: all 0.3s ease;
+  }
+  .banner-action-btn:hover {
+    background-color: #333333;
+    padding-right: 35px;
+  }
+  .btn-arrow {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+  }
+  .banner-action-btn:hover .btn-arrow {
+    transform: translateX(5px);
+  }
+
+  @media (max-width: 768px) {
+    .banner-container {
+      flex-direction: column;
+      padding: 20px;
+      text-align: center;
+    }
+    .banner-content-box {
+      max-width: 100%;
+      align-items: center;
+    }
+    .banner-main-heading {
+      font-size: 32px;
+    }
+    .banner-action-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Custom Hero Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "announcement_text",
+      "label": "Announcement Text",
+      "default": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo / Brand Text",
+      "default": "TISSO VISON"
+    },
+    {
+      "type": "text",
+      "id": "main_heading",
+      "label": "Main Heading",
+      "default": "The Gift Guide"
+    },
+    {
+      "type": "textarea",
+      "id": "description_text",
+      "label": "Description Text",
+      "default": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect delight your loved ones this holiday season."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Hero Banner"
+    }
+  ]
+}
+{% endschema %}
