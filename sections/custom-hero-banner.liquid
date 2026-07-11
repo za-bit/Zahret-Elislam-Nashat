@@ -1,0 +1,332 @@
+<div class="custom-hero-banner-section">
+  <!-- Top Header Bar -->
+  <div class="custom-top-header-bar">
+    <div class="header-bar-left">
+      <span>{{ section.settings.header_brand_text }}</span>
+    </div>
+    <div class="header-bar-center">
+      <p>{{ section.settings.header_middle_text }}</p>
+    </div>
+    <div class="header-bar-right">
+      <a href="{{ section.settings.header_btn_url }}" class="header-yellow-btn">
+        {{ section.settings.header_btn_text }}
+        <span class="header-btn-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Top Line Graphic -->
+  <div class="banner-top-line-container">
+    <img src="{{ 'banner-top-line.svg' | asset_url }}" alt="Line Art Pattern" class="top-line-graphic" width="1440" height="390" loading="lazy">
+  </div>
+
+  <!-- Main Banner Content -->
+  <div class="banner-main-wrapper">
+    <div class="banner-container">
+      <div class="banner-content-box">
+        <h1 class="banner-logo-title">{{ section.settings.logo_text }}</h1>
+        <h2 class="banner-main-heading">{{ section.settings.main_heading }}</h2>
+        <p class="banner-description">{{ section.settings.description_text }}</p>
+        
+        <a href="{{ section.settings.button_url }}" class="banner-action-btn">
+          {{ section.settings.button_text }}
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+
+      <div class="banner-graphic-box">
+        <img src="{{ 'banner-right-graphic.svg' | asset_url }}" alt="Featured Graphic" class="right-inner-graphic" width="890" height="402" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Announcement Bar -->
+  <div class="custom-bottom-announcement-bar">
+    <p class="announcement-bar-text">{{ section.settings.announcement_text }}</p>
+  </div>
+</div>
+
+<style>
+  .custom-hero-banner-section {
+    width: 100%;
+    font-family: 'Jost', sans-serif;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Top Header Bar Styles */
+  .custom-top-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 40px;
+    border-bottom: 1px solid #000000;
+  }
+  .header-bar-left {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .header-bar-center {
+    font-size: 14px;
+    color: #000000;
+    text-align: center;
+  }
+  .header-bar-center p {
+    margin: 0;
+  }
+  .header-bar-right {
+    display: flex;
+    align-items: center;
+  }
+  .header-yellow-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #ffe600;
+    color: #000000;
+    padding: 8px 20px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid #000000;
+    transition: background-color 0.3s ease;
+  }
+  .header-yellow-btn:hover {
+    background-color: #e6ce00;
+  }
+  .header-btn-arrow {
+    margin-left: 8px;
+  }
+
+  /* Top Line Graphic Styles */
+  .banner-top-line-container {
+    width: 100%;
+    height: auto;
+    display: block;
+    line-height: 0;
+  }
+  .top-line-graphic {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Main Banner Styles */
+  .banner-main-wrapper {
+    width: 100%;
+    position: relative;
+  }
+  .banner-container {
+    display: flex;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px 80px 40px 80px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .banner-content-box {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 2;
+    padding-top: 10px;
+  }
+  .banner-logo-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .banner-main-heading {
+    font-size: 54px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 500;
+    letter-spacing: -1px;
+  }
+  .banner-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333333;
+    margin-bottom: 40px;
+  }
+  .banner-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 200px;
+    transition: all 0.3s ease;
+  }
+  .banner-action-btn:hover {
+    background-color: #333333;
+    
+  }
+  .btn-arrow {
+
+    transition: transform 0.3s ease;
+  }
+  .banner-action-btn:hover .btn-arrow {
+    transform: translateX(5px);
+  }
+  .banner-graphic-box {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 650px;
+  }
+  .right-inner-graphic {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  /* Bottom Announcement Bar Styles */
+  .custom-bottom-announcement-bar {
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    padding: 16px 20px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .announcement-bar-text {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0;
+  }
+
+  /* Tablet and Medium Screens */
+  @media (max-width: 991px) {
+    .banner-container {
+      padding: 40px 40px;
+    }
+    .banner-main-heading {
+      font-size: 42px;
+    }
+  }
+
+  /* Mobile View Support */
+  @media (max-width: 768px) {
+    .custom-top-header-bar {
+      flex-direction: column;
+      gap: 12px;
+      padding: 15px 20px;
+      text-align: center;
+    }
+    .banner-container {
+      flex-direction: column-reverse;
+      padding: 20px 20px;
+      text-align: center;
+    }
+    .banner-content-box {
+      max-width: 100%;
+      align-items: center;
+      margin-top: 30px;
+    }
+    .banner-graphic-box {
+      max-width: 100%;
+      justify-content: center;
+    }
+    .banner-action-btn {
+      width: 100%;
+    }
+    .announcement-bar-text {
+      font-size: 12px;
+      letter-spacing: 0.5px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Custom Hero Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header_brand_text",
+      "label": "Header Brand Text",
+      "default": "TISSO VISON"
+    },
+    {
+      "type": "text",
+      "id": "header_middle_text",
+      "label": "Header Middle Text",
+      "default": "Find the ideal gift for your loved ones."
+    },
+    {
+      "type": "text",
+      "id": "header_btn_text",
+      "label": "Header Button Text",
+      "default": "CHOOSE GIFT"
+    },
+    {
+      "type": "url",
+      "id": "header_btn_url",
+      "label": "Header Button Link"
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo / Brand Text",
+      "default": "TISSO VISON"
+    },
+    {
+      "type": "text",
+      "id": "main_heading",
+      "label": "Main Heading",
+      "default": "The Gift Guide"
+    },
+    {
+      "type": "textarea",
+      "id": "description_text",
+      "label": "Description Text",
+      "default": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect delight your loved ones this holiday season."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "announcement_text",
+      "label": "Bottom Announcement Text",
+      "default": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Hero Banner"
+    }
+  ]
+}
+{% endschema %}
