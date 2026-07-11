@@ -44,7 +44,7 @@
           </div>
         {%- endfor -%}
       {%- else -%}
-        {% comment %} Placeholder view matching Figma grid structure {% endcomment %}
+        
         {%- for i in (1..4) -%}
           <div class="product-item-card">
             <div class="product-image-wrapper">
@@ -55,7 +55,7 @@
             </div>
             <div class="product-info-meta">
               <div class="product-title-row">
-                <h3 class="product-item-title">Sample Orange Textured Jacket</h3>
+                <h3 class="product-item-title">Sample Product Title</h3>
               </div>
               <div class="product-details-row">
                 <span class="product-item-price">$120.00</span>
@@ -76,7 +76,7 @@
     padding: 60px 80px;
     box-sizing: border-box;
     font-family: 'Jost', sans-serif;
-    border-bottom: 1px solid #000000;
+
   }
   .grid-container {
     max-width: 1440px;
@@ -89,7 +89,7 @@
   }
   .grid-section-title {
     font-size: 32px;
-
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #000000;
@@ -105,8 +105,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
+
   }
   .product-card-link {
     text-decoration: none;
@@ -128,8 +127,8 @@
     object-fit: cover;
     transition: transform 0.5s ease;
   }
-  
-  /* Figma Hover Component Effect */
+
+
   .product-card-overlay {
     position: absolute;
     top: 0;
@@ -159,11 +158,7 @@
   .product-item-card:hover .product-card-overlay {
     opacity: 1;
   }
-  .placeholder-svg-graphic {
-    width: 100%;
-    height: 100%;
-    background-color: #f2f2f2;
-  }
+
   .product-info-meta {
     padding: 16px 0;
     display: flex;
@@ -198,41 +193,40 @@
     color: #666666;
   }
 
-  /* Responsive Design Breakpoints */
-  @media (max-width: 1199px) {
-    .products-flex-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-  @media (max-width: 991px) {
+  /* Responsive Mobile Media Queries */
+  @media (max-width: 767px) {
     .custom-product-grid-section {
-      padding: 40px 40px;
+      padding: 30px 16px;
+    }
+    .grid-section-header {
+      margin-bottom: 20px;
     }
     .grid-section-title {
-      font-size: 26px;
+      font-size: 20px;
+      letter-spacing: 0.5px;
     }
     .products-flex-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
     }
-  }
-  @media (max-width: 575px) {
-    .custom-product-grid-section {
-      padding: 30px 16px;
+    .product-image-wrapper {
+      aspect-ratio: 1 / 1;
     }
-    .grid-section-title {
-      font-size: 22px;
-      margin-bottom: 20px;
-    }
-    .products-flex-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
+    .product-info-meta {
+      padding: 10px 0;
+      gap: 4px;
     }
     .product-item-title {
       font-size: 13px;
     }
     .product-item-price {
       font-size: 13px;
+    }
+    .product-item-sizes {
+      font-size: 11px;
+    }
+    .product-card-overlay {
+      display: none !important;
     }
   }
 </style>
